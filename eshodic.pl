@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 
 ############ ESX Host Hard Drive Check ##########################
-# Version : 0.1
+# Version : 0.2
 # Date : May 2 2014
 # Author : Arnaud Comein (arnaud.comein@gmail.com)
 # Licence : GPL - http://www.fsf.org/licenses/gpl.txt
@@ -71,12 +71,12 @@ if ($err == 0)
 
 	close $FILE;
 	close $TEST;	
-
+	
 	# Sortie
 	if ($err == 2)
 	{	
 		$extDiskErr = ($extDiskErr - $numVolLog);
-		print "Disques Locaux : $locDiskErr - Disques Externes : $extDiskErr\n";
+		print "Locaux : $locDiskErr - Externes : $extDiskErr - Volumes Impactés : $numVolLog\n";
 		exit $ERRORS{"CRITICAL"};
 	}
 	else
