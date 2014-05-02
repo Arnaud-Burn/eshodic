@@ -71,13 +71,13 @@ if ($err == 0)
 			$i++;
 			if ($line == 20)
 			{ 
-				print $TEMP "$i|";
+				print $TEMP "$i.";
 				$err = 2;
 			}
 		}
 	}	
 	
-	print $TEMP "|Externes : ";
+	print $TEMP "Externes : ";
 	
 	while( $line = <$FILE2> )
 	{
@@ -90,7 +90,7 @@ if ($err == 0)
 			$i2 = ($i - $numLocHdd);
 			if ( $line == 20 && $i <= ($end - $numVolLog))
 			{
-				print $TEMP "$i2|";
+				print $TEMP "$i2.";
 				$err = 2;
 			}
 		}
